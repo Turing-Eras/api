@@ -1,7 +1,7 @@
 ### Code Highlights:
  * <notes>
 ### Where should the reviewer start?
- * <notes.
+ * <notes>
 ### Have Tests Been Added?
 - [ ] No.
 - [ ] Yes, but all tests are not passing.
