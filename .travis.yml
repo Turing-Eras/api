@@ -1,0 +1,23 @@
+language: ruby
+rbenv:
+- 2.6.1
+addons:
+  postgresql: 9.6
+script:
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Cct19NachloEERC4D9oxE+nzpadgkXCcSJ56JQRmFM1y58jWjnIj63Gk+rmSXwZ3qPOJjSSn3zC/oHsrM3euPFJd1sI4I4d+/p2Gd2MXBFadXR9k1fwNAkwRo5jSyTrg4Hd/NvAh10IfQgua62ieyrpM4zORjfn5tiappwHTTFEps4r0DIVjuNqIYxuQ5MqmdhvgRGtNGTKr3OCinkL+VRJhnpJhJNOHWm86f1XdYj6UwrtA0zP861chu2k1pVX+Jl/KQ/E0SAKF0RMtNMS64KPqurRovIzwG4ws8bKwdjGk3E+9Y75k1gtSZgfJ4xuSCnHMajN8PcpvKEijYNJqhfPhMM8T5/cdT/mHQ17zxlKsp2vM4b0HrRem8xh/S+AS3Bsx0GyXZw3mwjYCuejD+iizkwCQ1bVCkIvT2sj4gImX/Bqvrq5E8ejl+JJJ8MBJuuqTLhe9zqgpiYqRSLEIe4tP/j27V1uHEuNOdw2LcSUrDmhiU1ZAVJn6v6vjYwKOpbwMCklCNcIp1xwYirfslTb+6ttTPikDhhaH0B7lRPjaCObxxpA5GRv2Y9nUM3490tj97m9pa/WsrKL5jn36b+pZJi9NDLfVENxSv4NnhgSbqkYtIXhyUqs+g/HwBgw96sKY26UXZu8PynP7rR/AAJXpSJrKtaVievAoX72L2fc=
+  app: eras-api
+  on:
+    repo: Turing-Eras/api
+    branch: main
+  skip_cleanup: 'true'
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+cache:
+- bundler
