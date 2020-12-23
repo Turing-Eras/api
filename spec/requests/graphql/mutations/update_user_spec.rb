@@ -7,7 +7,7 @@ module Mutations
         it 'updates a user' do
           frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001, 2, 3))
 
-          post graphql_path, params: {query: query(frosty.id)}
+          post graphql_path, params: { query: query(frosty.id) }
           result = JSON.parse(response.body)
 
           data = result['data']['updateUser']
