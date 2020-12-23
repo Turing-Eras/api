@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.delete_all
+
+frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001,2,3))
+santa = User.create!(name: 'Nick', email: 'slay@northpole.com', birthdate: DateTime.new(1950,12,25))
