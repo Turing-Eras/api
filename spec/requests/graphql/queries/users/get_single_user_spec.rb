@@ -5,7 +5,7 @@ RSpec.describe Types::QueryType do
     it 'can query one user' do
       user = User.create!(id: 1, name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001, 2, 3))
 
-      post graphql_path, params: {query: query}
+      post graphql_path, params: { query: query }
       result = JSON.parse(response.body)
 
       expect(result.dig('data',

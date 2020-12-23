@@ -6,9 +6,9 @@ RSpec.describe Types::QueryType do
       User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001, 2, 3))
       User.create!(name: 'Nick', email: 'slay@northpole.com', birthdate: DateTime.new(1950, 12, 25))
 
-      post graphql_path, params: {query: query}
+      post graphql_path, params: { query: query }
       result = JSON.parse(response.body)
-      
+
       expect(result['data']['getUsers'].count).to eq(2)
 
       users = User.all
