@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Types::QueryType do
   describe 'display users' do
     it 'can query one user' do
-      user = User.create!(id: 1, name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001, 2, 3))
+      user = create(:user, :with_eras_events)
 
-      post graphql_path, params: { query: query }
+      post graphql_path, params: { query: query(id: user.id) }
       result = JSON.parse(response.body)
 
       expect(result.dig('data',
@@ -18,10 +18,10 @@ RSpec.describe Types::QueryType do
     end
   end
 
-  def query
+  def query(id:)
     <<~GQL
       {
-        getUser(id: "1") {
+        getUser(id: #{id}) {
           id
           name
           email

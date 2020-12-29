@@ -5,9 +5,9 @@ module Mutations
     RSpec.describe UpdateUser, type: :request do
       describe '.resolve' do
         it 'updates a user' do
-          frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001, 2, 3))
+          user = create(:user, :with_eras_events)
 
-          post graphql_path, params: { query: query(frosty.id) }
+          post graphql_path, params: { query: query(user.id) }
           result = JSON.parse(response.body)
 
           data = result['data']['updateUser']
