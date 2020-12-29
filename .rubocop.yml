@@ -9,6 +9,7 @@ AllCops:
     - 'log/**/*'
     - 'public/**/*'
     - 'tmp/**/*'
+    - 'spec/**/*'
     - 'vendor/**/*'
     - './*'
     - 'app/controllers/graphql_controller.rb'
