@@ -19,21 +19,21 @@ module Mutations
 
         def query(user_id)
           <<~GQL
-            mutation {
-              updateUser(
+          mutation {
+            updateUser(input:{
                 id: #{user_id}
                 name: "Frosted Flakes Frosty"
                 email: "ice@brr.com"
                 birthdate: "2000-01-01"
-                ) {
-                id
-                name
-                email
-                birthdate
+                }) {
+                  id
+                  name
+                  email
+                  birthdate
                 }
-            }
-          GQL
-        end
+              }
+              GQL
+            end
       end
     end
   end
