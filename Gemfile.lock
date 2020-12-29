@@ -80,6 +80,8 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.14.0)
@@ -252,6 +254,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   factory_bot_rails
+  faker
   graphiql-rails
   graphql
   listen (~> 3.3)

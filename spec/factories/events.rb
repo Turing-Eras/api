@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :event do
-    user { nil }
-    name { 'MyString' }
+    name { Faker::Hipster.sentence }
     date { '2020-12-19 15:38:49' }
-    color { 'MyString' }
+    color { Faker::Color.hex_color }
+    association :user
   end
 end
