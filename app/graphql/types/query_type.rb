@@ -15,5 +15,14 @@ module Types
     def get_user(id:)
       User.find(id)
     end
+
+    # Event queries
+    def get_events
+      Event.all
+    end
+
+    def get_event(id:)
+      Event.find(id)
+    end
   end
 end
