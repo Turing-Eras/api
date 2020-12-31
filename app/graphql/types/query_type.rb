@@ -6,7 +6,6 @@ module Types
       argument :id, ID, required: true
     end
 
-    # Events
     field :get_event, Types::EventType, null: false, description: 'Returns a single event by id' do
       argument :id, ID, required: true
     end
