@@ -25,10 +25,6 @@ module Types
     end
 
     # Event queries
-    def get_events
-      Event.all
-    end
-
     def get_event(id:)
       Event.find(id)
     end
