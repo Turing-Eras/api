@@ -6,18 +6,17 @@ RSpec.describe Mutations::Events::UpdateEvent, type: :request do
       user = create(:user, :with_eras_events)
       event_id = user.events[0].id
 
-      post graphql_path, params: { query: query(user.id, event_id) }
+      post graphql_path, params: { query: query(event_id) }
       result = JSON.parse(response.body)
 
       data = result['data']['updateEvent']
 
-      expect(data['user_id']).to eq(user.id)
       expect(data['name']).to eq('Paleo gluten-free aesthetic everyday farm-to-table slow-carb distillery.')
-      expect(data['date']).to eq('Sat, 19 Dec 2020 15:38:49.000000000 UTC +00:00')
+      expect(data['date']).to eq('2020-12-19 15:38:49 UTC')
       expect(data['color']).to eq('#26e840')
     end
 
-    def query(user_id, event_id)
+    def query(event_id)
       <<~GQL
         mutation {
           updateEvent(input:{
@@ -27,7 +26,6 @@ RSpec.describe Mutations::Events::UpdateEvent, type: :request do
               color: "#26e840"
               }) {
                 id
-                user_id
                 name
                 date
                 color
