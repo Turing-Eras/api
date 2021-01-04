@@ -18,6 +18,10 @@ RSpec.describe Types::QueryType do
       expect(result["data"]["getEvent"]["name"]).to be_a(String)
       expect(result["data"]["getEvent"]["date"]).to be_a(String)
       expect(result["data"]["getEvent"]["color"]).to be_a(String)
+
+      expect(result["data"]["getEvent"]["name"]).to eq(@user_1.events.first.name)
+      expect(result["data"]["getEvent"]["date"]).to eq(@user_1.events.first.date.to_s)
+      expect(result["data"]["getEvent"]["color"]).to eq(@user_1.events.first.color)
     end
   end
 
