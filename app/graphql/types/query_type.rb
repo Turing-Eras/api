@@ -20,7 +20,7 @@ module Types
       User.find(id)
     end
 
-    #Eras
+    # Eras
     def get_era(id:)
       Era.find(id)
     end
