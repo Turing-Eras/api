@@ -22,7 +22,6 @@ RSpec.describe Mutations::Events::UpdateEvent, type: :request do
         mutation {
           updateEvent(input:{
               id: #{event_id}
-              user_id: #{user_id}
               name: "Paleo gluten-free aesthetic everyday farm-to-table slow-carb distillery."
               date: "Sat, 19 Dec 2020 15:38:49.000000000 UTC +00:00"
               color: "#26e840"
