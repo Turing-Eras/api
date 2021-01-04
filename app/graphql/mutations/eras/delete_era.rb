@@ -5,9 +5,9 @@ module Mutations
 
       type Types::EraType
 
-      def resolve(attributes)
-        era = Eras.find(attributes[:id])
-        era.delete(attributes)
+      def resolve(id:)
+        era = Era.find(id)
+        era.delete
       end
     end
   end
