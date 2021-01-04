@@ -22,6 +22,6 @@
     ```
     - This file is ignored by git tracking but is necessary to run the server locally.
 - Run your own development server:
-  - In config/applicaiton.rb, uncomment out line 15 (`require "sprockets/railtie"`)
+  - In config/application.rb, uncomment out line 15 (`require "sprockets/railtie"`)
   - `rails s`
   - You should be able to access the GraphQL interface via http://localhost:3000/graphiql
