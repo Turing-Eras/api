@@ -32,6 +32,7 @@ module Types
     # Eras
     def get_era(id:)
       Era.find(id)
+    end
 
     # Event queries
     def get_event(id:)
