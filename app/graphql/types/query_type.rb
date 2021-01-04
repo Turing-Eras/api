@@ -7,8 +7,6 @@ module Types
     end
 
     # Events
-    field :get_events, [Types::EventType], null: false, description: 'Returns a list of events'
-
     field :get_event, Types::EventType, null: false, description: 'Returns a single event by id' do
       argument :id, ID, required: true
     end
