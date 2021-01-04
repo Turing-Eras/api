@@ -6,9 +6,17 @@ module Types
       argument :id, ID, required: true
     end
 
+
     field :get_era, Types::EraType, null: false, description: 'Returns a single era by id' do
       argument :id, ID, required: true
     end
+
+    # Events
+    field :get_event, Types::EventType, null: false, description: 'Returns a single event by id' do
+      argument :id, ID, required: true
+    end
+
+
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
@@ -20,9 +28,14 @@ module Types
       User.find(id)
     end
 
+
     # Eras
     def get_era(id:)
       Era.find(id)
+
+    # Event queries
+    def get_event(id:)
+      Event.find(id)
     end
   end
 end

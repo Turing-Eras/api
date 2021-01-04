@@ -30,6 +30,20 @@ RSpec.describe Types::QueryType do
           }
         end
       )
+
+      expect(result['data']['getUser']['events']).to eq(
+        user.events.map do |event|
+          {
+            'id' => event.id.to_s,
+            'userId' => event.user_id.to_s,
+            'name' => event.name,
+            'date' => event.date.to_s,
+            'color' => event.color,
+            'createdAt' => event.created_at.to_s,
+            'updatedAt' => event.updated_at.to_s
+          }
+        end
+      )      
     end
   end
 
@@ -47,6 +61,15 @@ RSpec.describe Types::QueryType do
             name
             startDate
             endDate
+            color
+            createdAt
+            updatedAt
+          }
+          events {
+            id
+            userId
+            name
+            date
             color
             createdAt
             updatedAt
