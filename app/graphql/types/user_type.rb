@@ -4,5 +4,6 @@ module Types
     field :name, String, null: true
     field :email, String, null: true
     field :birthdate, String, null: true
+    field :eras, [Types::EraType], null: false
   end
 end
