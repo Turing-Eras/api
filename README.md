@@ -157,8 +157,21 @@ With Eras, you'll see your life in a whole new way.
   - Create Era: <details>
     ```
     mutation {
-
-    }
+          createEra(input:{
+              userId: #{id}
+              name: "NAME"
+              startDate: "START DATE"
+              endDate: "START DATE"
+              color: "COLOR CODE"
+              }) {
+                id
+                userId
+                name
+                startDate
+                endDate
+                color
+              }
+            }
     ```
     </details>
   - Update Era: <details>
