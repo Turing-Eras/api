@@ -4,6 +4,7 @@ FactoryBot.define do
     name { Faker::Hipster.sentence }
     start_date { date }
     end_date { Faker::Date.between(from: date, to: Date.today) }
+    week_number { 22 }
     color { Faker::Color.hex_color }
     association :user
   end
