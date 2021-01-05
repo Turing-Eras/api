@@ -13,10 +13,10 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
 
       expect(Era.all.size).to eq(eras + 1)
       expect(data['userId']).to eq("#{user.id}")
-      expect(data['name']).to eq('Summer Abroad')
+      expect(data['name']).to eq('Year Abroad')
       expect(data['startDate']).to eq('2000-01-01')
-      expect(data['endDate']).to eq('2000-01-10')
-      expect(data['weekNumber']).to eq('45')
+      expect(data['endDate']).to eq('2001-01-10')
+      expect(data['weekNumber']).to eq('419')
       expect(data['color']).to eq('#fh92jf')
     end
 
@@ -25,10 +25,9 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
         mutation {
           createEra(input:{
               userId: #{id}
-              name: "Summer Abroad"
+              name: "Year Abroad"
               startDate: "2000-01-01 00:00:00 UTC"
-              endDate: "2000-01-10 00:00:00 UTC"
-              weekNumber: "45"
+              endDate: "2001-01-10 00:00:00 UTC"
               color: "#fh92jf"
               }) {
                 id
