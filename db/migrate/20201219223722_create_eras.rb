@@ -5,6 +5,7 @@ class CreateEras < ActiveRecord::Migration[6.1]
       t.string :name
       t.date :start_date
       t.date :end_date
+      t.integer :week_number
       t.string :color
 
       t.timestamps
