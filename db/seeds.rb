@@ -8,6 +8,13 @@
 require 'factory_bot_rails'
 require 'faker'
 
+Event.destroy_all
+Event.reset_pk_sequence
+Era.destroy_all
+Era.reset_pk_sequence
+User.destroy_all
+User.reset_pk_sequence
+
 Event.delete_all
 Era.delete_all
 User.delete_all
