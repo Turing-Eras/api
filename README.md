@@ -55,7 +55,7 @@ With Eras, you'll see your life in a whole new way.
 ## GraphQL Schema
 - Queries available:
   - <details><summary>Get Single Era:</summary>
-    ```json
+    ```
     {
       getEra(id: #{id}) {
         id
@@ -71,7 +71,7 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Get Single Event: </summary>
-    ```json
+    ```
     {
       getEvent(id: "#{event_id}") {
         name
@@ -81,7 +81,7 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Get Single User:</summary>
-    ```json
+    ```
     {
       getUser(id: #{id}) {
         id
@@ -112,7 +112,7 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Get All Users:</summary>
-    ```json
+    ```
     {
       getUsers {
         id
@@ -128,14 +128,14 @@ With Eras, you'll see your life in a whole new way.
     </details>
 - Mutations available:
   - <details><summary>Create User: </summary>
-    ```json
+    ```
     mutation {
 
     }
     ```
     </details>
   - <details><summary>Update User:</summary>
-    ```json
+    ```
     mutation {
       updateUser(input:{
           id: #{user_id}
@@ -155,21 +155,21 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Create Era:</summary>
-    ```json
+    ```
     mutation {
 
     }
     ```
     </details>
   - <details><summary>Update Era:</summary>
-    ```json
+    ```
     mutation {
 
     }
     ```
     </details>
   - <details><summary>Delete Era:</summary>
-    ```json
+    ```
     mutation {
       deleteEra(input:{
           id: #{era_id}
@@ -180,14 +180,14 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Create Event:</summary>
-    ```json
+    ```
     mutation {
 
     }
     ```
     </details>
   - <details><summary>Update Event:</summary>
-    ```json
+    ```
     mutation {
       updateEvent(input:{
           id: #{event_id}
@@ -204,7 +204,7 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Delete Event:</summary>
-    ```json
+    ```
     mutation {
       deleteEvent(input:{
           id: #{event_id}
