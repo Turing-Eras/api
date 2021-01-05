@@ -11,8 +11,8 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       attributes = {
         userId: @user.id,
         name: 'Summer Abroad',
-        startDate: '2000-01-01 00:00:00 UTC',
-        endDate: '2000-01-10 00:00:00 UTC',
+        startDate: '2000-01-01',
+        endDate: '2000-01-10',
         color: '#000000'
       }
 
@@ -33,8 +33,8 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       attributes = {
         userId: @user.id,
         name: 'Summer Abroad',
-        startDate: '3000-01-01 00:00:00 UTC',
-        endDate: '2000-01-10 00:00:00 UTC',
+        startDate: '3000-01-01',
+        endDate: '2000-01-10',
         color: '#000000'
       }
 
@@ -51,8 +51,8 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       attributes = {
         userId: @user.id,
         name: 'Summer Abroad',
-        startDate: '2000-01-01 00:00:00 UTC',
-        endDate: '3000-01-10 00:00:00 UTC',
+        startDate: '2000-01-01',
+        endDate: '3000-01-10',
         color: '#000000'
       }
 
@@ -69,8 +69,8 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       attributes = {
         userId: @user.id,
         name: 'Summer Abroad',
-        startDate: '3000-01-01 00:00:00 UTC',
-        endDate: '3000-01-10 00:00:00 UTC',
+        startDate: '3000-01-01',
+        endDate: '3000-01-10',
         color: '#000000'
       }
 
