@@ -10,6 +10,9 @@ class Mutations::Eras::UpdateEra < ::Mutations::BaseMutation
 
   def resolve(attributes)
     era = Era.find(attributes[:id])
+    start_date = attributes[:start_date].to_date
+    user_bday = User.where(id: era[:user_id])[0].birthdate
+    attributes[:week_number] = ((start_date - user_bday).to_i / 7 )
     era.update(attributes)
     era
   end
