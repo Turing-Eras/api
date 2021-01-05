@@ -179,10 +179,10 @@ With Eras, you'll see your life in a whole new way.
     mutation {
           updateEra(input:{
               id: #{era_id}
-              name: "Master chambray tote bag fixie"
-              startDate: "Mon, 4 Jan 2021"
-              endDate: "Mon, 20 Jan 2021"
-              color: "#7225f6"
+              name: "NEW NAME"
+              startDate: "NEW START DATE"
+              endDate: "NEW END DATE"
+              color: "NEW COLOR CODE"
               }) {
                 id
                 userId
