@@ -47,7 +47,7 @@ By providing info on personal events, you will be shown a visual calendar of you
 ## Test Suite
 - Run with `bundle exec rspec`
 - All tests should be passing
-- [x]% test coverage
+- 83.24% test coverage
 
 
 ## GraphQL Schema
@@ -55,7 +55,7 @@ By providing info on personal events, you will be shown a visual calendar of you
  - Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
- - Insert pic of schema
+ - ![our schema](/schema.png)
  - Insert description of each table
 
 ## Project Board
