@@ -11,7 +11,7 @@ class Mutations::Eras::CreateEra < ::Mutations::BaseMutation
   def resolve(attributes)
     start_date = attributes[:start_date].to_date
     user_bday = User.where(id: attributes[:user_id])[0].birthdate
-    attributes[:week_number] = ((start_date - user_bday).to_i / 7 )
+    attributes[:week_number] = ((start_date - user_bday).to_i / 7)
     Era.create(attributes)
   end
 end
