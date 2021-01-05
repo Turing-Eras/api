@@ -14,8 +14,8 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       expect(Era.all.size).to eq(eras + 1)
       expect(data['userId']).to eq("#{user.id}")
       expect(data['name']).to eq('Summer Abroad')
-      expect(data['startDate']).to eq('2000-01-01 00:00:00 UTC')
-      expect(data['endDate']).to eq('2000-01-10 00:00:00 UTC')
+      expect(data['startDate']).to eq('2000-01-01')
+      expect(data['endDate']).to eq('2000-01-10')
       expect(data['color']).to eq('#fh92jf')
     end
 
