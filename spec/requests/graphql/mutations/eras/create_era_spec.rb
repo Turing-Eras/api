@@ -16,6 +16,7 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       expect(data['name']).to eq('Summer Abroad')
       expect(data['startDate']).to eq('2000-01-01')
       expect(data['endDate']).to eq('2000-01-10')
+      expect(data['weekNumber']).to eq('45')
       expect(data['color']).to eq('#fh92jf')
     end
 
@@ -27,6 +28,7 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
               name: "Summer Abroad"
               startDate: "2000-01-01 00:00:00 UTC"
               endDate: "2000-01-10 00:00:00 UTC"
+              weekNumber: "45"
               color: "#fh92jf"
               }) {
                 id
@@ -34,6 +36,7 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
                 name
                 startDate
                 endDate
+                weekNumber
                 color
               }
             }
