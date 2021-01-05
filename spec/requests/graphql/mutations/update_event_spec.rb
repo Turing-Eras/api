@@ -12,7 +12,7 @@ RSpec.describe Mutations::Events::UpdateEvent, type: :request do
       data = result['data']['updateEvent']
 
       expect(data['name']).to eq('Paleo gluten-free aesthetic everyday farm-to-table slow-carb distillery.')
-      expect(data['date']).to eq('2020-12-19 15:38:49 UTC')
+      expect(data['date']).to eq("2020-12-19")
       expect(data['color']).to eq('#26e840')
     end
 
