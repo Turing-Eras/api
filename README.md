@@ -55,8 +55,7 @@ With Eras, you'll see your life in a whole new way.
 ## GraphQL Schema
 - Queries available:
   - Get Single Era:
-    - ```
-    {
+    - ```{
       getEra(id: #{id}) {
         id
         userId
@@ -67,20 +66,16 @@ With Eras, you'll see your life in a whole new way.
         createdAt
         updatedAt
       }
-    }
-    ```
+    }```
   - Get Single Event:
-    - ```
-    {
+    - ```{
       getEvent(id: "#{event_id}") {
         name
         date
         color
-      }
-    ```
+      }```
   - Get Single User:
-    - ```
-    {
+    - ```{
       getUser(id: #{id}) {
         id
         name
@@ -106,11 +101,9 @@ With Eras, you'll see your life in a whole new way.
           updatedAt
         }
       }
-    }
-    ```
+    }```
   - Get All Users:
-    - ```
-    {
+    - ```{
       getUsers {
         id
         name
@@ -120,15 +113,13 @@ With Eras, you'll see your life in a whole new way.
           id
         }
       }
-    }
-    ```
+    }```
 
 - Mutations available:
   - Create User:
     -
   - Update User:
-    - ```
-    mutation {
+    - ```mutation {
       updateUser(input:{
           id: #{user_id}
           name: "NEW NAME"
@@ -143,8 +134,7 @@ With Eras, you'll see your life in a whole new way.
               id
             }
           }
-        }
-    ```
+        }```
   - Create Era:
     - ```
 
@@ -154,22 +144,19 @@ With Eras, you'll see your life in a whole new way.
 
     ```
   - Delete Era:
-    - ```
-    mutation {
+    - ```mutation {
       deleteEra(input:{
           id: #{era_id}
           }){
             id
           }
-        }
-      ```
+        }```
   - Create Event:
     - ```
 
     ```
   - Update Event:
-    - ```
-    mutation {
+    - ```mutation {
       updateEvent(input:{
           id: #{event_id}
           name: "NEW NAME"
@@ -181,18 +168,15 @@ With Eras, you'll see your life in a whole new way.
             date
             color
           }
-        }
-    ```
+        }```
   - Delete Event:
-    - ```
-    mutation {
+    - ```mutation {
       deleteEvent(input:{
           id: #{event_id}
           }){
             id
           }
-        }
-    ```
+        }```
 - Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
