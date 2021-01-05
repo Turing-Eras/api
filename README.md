@@ -54,7 +54,7 @@ With Eras, you'll see your life in a whole new way.
 
 ## GraphQL Schema
 - Queries available:
-  - <details><summary>Get Single Era:</summary>
+  - Get Single Era: <details>
     ```
     {
       getEra(id: #{id}) {
@@ -70,7 +70,7 @@ With Eras, you'll see your life in a whole new way.
     }
     ```
     </details>
-  - <details><summary>Get Single Event: </summary>
+  - Get Single Event: <details>
     ```
     {
       getEvent(id: "#{event_id}") {
@@ -80,7 +80,7 @@ With Eras, you'll see your life in a whole new way.
       }
     ```
     </details>
-  - <details><summary>Get Single User:</summary>
+  - Get Single User: <details>
     ```
     {
       getUser(id: #{id}) {
@@ -111,7 +111,7 @@ With Eras, you'll see your life in a whole new way.
     }
     ```
     </details>
-  - <details><summary>Get All Users:</summary>
+  - Get All Users: <details>
     ```
     {
       getUsers {
@@ -127,14 +127,14 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
 - Mutations available:
-  - <details><summary>Create User: </summary>
+  - Create User: <details>
     ```
     mutation {
 
     }
     ```
     </details>
-  - <details><summary>Update User:</summary>
+  - Update User: <details>
     ```
     mutation {
       updateUser(input:{
@@ -154,21 +154,21 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
     </details>
-  - <details><summary>Create Era:</summary>
+  - Create Era: <details>
     ```
     mutation {
 
     }
     ```
     </details>
-  - <details><summary>Update Era:</summary>
+  - Update Era: <details>
     ```
     mutation {
 
     }
     ```
     </details>
-  - <details><summary>Delete Era:</summary>
+  - Delete Era: <details>
     ```
     mutation {
       deleteEra(input:{
@@ -179,14 +179,14 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
     </details>
-  - <details><summary>Create Event:</summary>
+  - Create Event: <details>
     ```
     mutation {
 
     }
     ```
     </details>
-  - <details><summary>Update Event:</summary>
+  - Update Event: <details>
     ```
     mutation {
       updateEvent(input:{
@@ -203,7 +203,7 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
     </details>
-  - <details><summary>Delete Event:</summary>
+  - Delete Event: <details>
     ```
     mutation {
       deleteEvent(input:{
@@ -214,7 +214,7 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
     </details>
-- Is there way to nicely get the Documentation (shown when going to /graphiql?) 
+- Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
 - ![our schema](/schema.png)
