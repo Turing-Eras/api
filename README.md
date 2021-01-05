@@ -192,4 +192,4 @@ With Eras, you'll see your life in a whole new way.
 - Angela Guardia |  [Github](https://github.com/AngelaGuardia)  |  [LinkedIn](https://www.linkedin.com/in/angela-guardia/)
 - Daniel Halverson |  [Github](https:Gi.com/dhalverson)  |  [LinkedIn](https://www.linkedin.com/in/daniel-halverson/)
 - Leah Riffell |  [Github](https://github.com/leahriffell)  |  [LinkedIn](https://www.linkedin.com/in/leah-riffell/)
-- Luke Hunter James-Erickson  |  [Github](https://github.com/LHJE)  |  [LinkedIn](https://www.linkedin.com/in/luke-hunter-james-erickson-b65682143/)
+- Luke Hunter James-Erickson  |  [Github](https://github.com/LHJE)  |  [LinkedIn](https://www.linkedin.com/in/luke-hunter-james-erickson-b65682143/) 
