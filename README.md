@@ -54,8 +54,9 @@ With Eras, you'll see your life in a whole new way.
 
 ## GraphQL Schema
 - Queries available:
-  - Get Single Era:
-    - ``` {
+  - <details><summary>Get Single Era:</summary>
+    ```graphql
+    {
       getEra(id: #{id}) {
         id
         userId
@@ -66,16 +67,22 @@ With Eras, you'll see your life in a whole new way.
         createdAt
         updatedAt
       }
-    } ```
-  - Get Single Event:
-    - ``` {
+    }
+    ```
+    </details>
+  - <details><summary>Get Single Event: </summary>
+    ```graphql
+     {
       getEvent(id: "#{event_id}") {
         name
         date
         color
-      } ```
+      }
+    ```
+    </details>
   - Get Single User:
-    - ``` {
+    - ```graphql
+     {
       getUser(id: #{id}) {
         id
         name
@@ -101,9 +108,11 @@ With Eras, you'll see your life in a whole new way.
           updatedAt
         }
       }
-    } ```
+    }
+    ```
   - Get All Users:
-    - ``` {
+    - ```graphql
+     {
       getUsers {
         id
         name
@@ -113,13 +122,17 @@ With Eras, you'll see your life in a whole new way.
           id
         }
       }
-    } ```
+    }
+    ```
 
 - Mutations available:
   - Create User:
-    -
+    - ```graphql
+
+    ```
   - Update User:
-    - ``` mutation {
+    - ```graphql
+     mutation {
       updateUser(input:{
           id: #{user_id}
           name: "NEW NAME"
@@ -134,29 +147,33 @@ With Eras, you'll see your life in a whole new way.
               id
             }
           }
-        } ```
+        }
+    ```
   - Create Era:
-    - ```
+    - ```graphql
 
     ```
   - Update Era:
-    - ```
+    - ```graphql
 
     ```
   - Delete Era:
-    - ``` mutation {
+    - ```graphql
+     mutation {
       deleteEra(input:{
           id: #{era_id}
           }){
             id
           }
-        } ```
+        }
+    ```
   - Create Event:
-    - ```
+    - ```graphql
 
     ```
   - Update Event:
-    - ``` mutation {
+    - ```graphql
+     mutation {
       updateEvent(input:{
           id: #{event_id}
           name: "NEW NAME"
@@ -168,15 +185,18 @@ With Eras, you'll see your life in a whole new way.
             date
             color
           }
-        } ```
+        }
+    ```
   - Delete Event:
-    - ``` mutation {
+    - ```graphql
+     mutation {
       deleteEvent(input:{
           id: #{event_id}
           }){
             id
           }
-        } ```
+        }
+    ```
 - Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
@@ -192,4 +212,4 @@ With Eras, you'll see your life in a whole new way.
 - Angela Guardia |  [Github](https://github.com/AngelaGuardia)  |  [LinkedIn](https://www.linkedin.com/in/angela-guardia/)
 - Daniel Halverson |  [Github](https:Gi.com/dhalverson)  |  [LinkedIn](https://www.linkedin.com/in/daniel-halverson/)
 - Leah Riffell |  [Github](https://github.com/leahriffell)  |  [LinkedIn](https://www.linkedin.com/in/leah-riffell/)
-- Luke Hunter James-Erickson  |  [Github](https://github.com/LHJE)  |  [LinkedIn](https://www.linkedin.com/in/luke-hunter-james-erickson-b65682143/) 
+- Luke Hunter James-Erickson  |  [Github](https://github.com/LHJE)  |  [LinkedIn](https://www.linkedin.com/in/luke-hunter-james-erickson-b65682143/)
