@@ -5,7 +5,7 @@ RSpec.describe Types::QueryType do
     it 'can query one user' do
       user = create(:user, :with_eras_events)
 
-      post graphql_path, params: { query: query(id: user.id) }
+      post graphql_path, params: { query: query(user.id) }
       result = JSON.parse(response.body)
 
       expect(result.dig('data',
@@ -47,7 +47,7 @@ RSpec.describe Types::QueryType do
     end
   end
 
-  def query(id:)
+  def query(id)
     <<~GQL
       {
         getUser(id: #{id}) {
