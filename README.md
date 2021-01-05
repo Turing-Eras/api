@@ -1,9 +1,11 @@
 # Eras
 ![rails-badge](https://img.shields.io/badge/Rails-6.1.0-informational?style=flat-square) ![ruby-badge](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat-square) ![build-badge](https://img.shields.io/travis/turing-eras/api/main?style=flat-square) ![closed-pr-badge](https://img.shields.io/github/issues-pr-closed-raw/turing-eras/api?style=flat-square)
 
-This GraphQL on Rails API [insert live endpoint link] serves queries and mutations to Eras [insert live FE link], an application that allows you to visualize your life wholistically in order to live more intentionally.
+This [GraphQL on Rails API](insert live endpoint link) serves queries and mutations to [Eras](insert live FE link), an application that allows you to visualize your life holistically in order to live more intentionally.
 
-By providing info on personal events, you will be shown a visual calendar of your life. The intent is that by viewing the seemingly fleeting weeks that add up to years and decades, you are able to cherish the little moments and appreciate [insert stuff].
+By providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to cherish the little moments and appreciate the journey you've been on thus far.  Visualize how small Events kicked off larger Eras, find curious patterns, and marvel at just how far you've come, and how much time you still get.
+
+With Eras, you'll see your life in a whole new way.
 
 [insert screenshots]
 
@@ -17,7 +19,7 @@ By providing info on personal events, you will be shown a visual calendar of you
 - [Contributors](#contributors)
 
 ## User Interface
-- Deployed application (insert link)
+- [Deployed application](insert link)
 - [Frontend repo](https://github.com/Turing-Eras/front_end)
   - Stack: React, Typescript
 
@@ -42,7 +44,7 @@ By providing info on personal events, you will be shown a visual calendar of you
 - Run your own development server:
   - In config/application.rb, uncomment out line 15 (`require "sprockets/railtie"`)
   - `rails s`
-  - You should be able to access the GraphQL interface and see available queries and mutations via http://localhost:3000/graphiql
+  - You should be able to access the GraphQL interface and see available queries and mutations via the docs on http://localhost:3000/graphiql
 
 ## Test Suite
 - Run with `bundle exec rspec`
@@ -51,17 +53,156 @@ By providing info on personal events, you will be shown a visual calendar of you
 
 
 ## GraphQL Schema
- - Insert list of queries and mutations available
- - Is there way to nicely get the Documentation (shown when going to /graphiql?)
+- Queries available:
+  - Get Single Era:
+    - ```
+    {
+      getEra(id: #{id}) {
+        id
+        userId
+        name
+        startDate
+        endDate
+        color
+        createdAt
+        updatedAt
+      }
+    }
+    ```
+  - Get Single Event:
+    - ```
+    {
+      getEvent(id: "#{event_id}") {
+        name
+        date
+        color
+      }
+    ```
+  - Get Single User:
+    - ```
+    {
+      getUser(id: #{id}) {
+        id
+        name
+        email
+        birthdate
+        eras {
+          id
+          userId
+          name
+          startDate
+          endDate
+          color
+          createdAt
+          updatedAt
+        }
+        events {
+          id
+          userId
+          name
+          date
+          color
+          createdAt
+          updatedAt
+        }
+      }
+    }
+    ```
+  - Get All Users:
+    - ```
+    {
+      getUsers {
+        id
+        name
+        email
+        birthdate
+        eras {
+          id
+        }
+      }
+    }
+    ```
+
+- Mutations available:
+  - Create User:
+    -
+  - Update User:
+    - ```
+    mutation {
+      updateUser(input:{
+          id: #{user_id}
+          name: "NEW NAME"
+          email: "NEW EMAIL"
+          birthdate: "NEW BIRTHDATE"
+          }) {
+            id
+            name
+            email
+            birthdate
+            eras {
+              id
+            }
+          }
+        }
+    ```
+  - Create Era:
+    - ```
+
+    ```
+  - Update Era:
+    - ```
+
+    ```
+  - Delete Era:
+    - ```
+    mutation {
+      deleteEra(input:{
+          id: #{era_id}
+          }){
+            id
+          }
+        }
+      ```
+  - Create Event:
+    - ```
+    
+    ```
+  - Update Event:
+    - ```
+    mutation {
+      updateEvent(input:{
+          id: #{event_id}
+          name: "NEW NAME"
+          date: "NEW DATE"
+          color: "NEW COLOR"
+          }) {
+            id
+            name
+            date
+            color
+          }
+        }
+    ```
+  - Delete Event:
+    - ```
+    mutation {
+      deleteEvent(input:{
+          id: #{event_id}
+          }){
+            id
+          }
+        }
+    ```
+- Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
- - ![our schema](/schema.png)
- - Insert description of each table
+- ![our schema](/schema.png)
+- Insert description of each table
 
 ## Project Board
- - [GitHub project](https://github.com/orgs/Turing-Eras/projects/1)
- - Next steps / epics for development:
-   - User authentication
+- [GitHub project](https://github.com/orgs/Turing-Eras/projects/1)
+- Next steps / epics for development:
+  - User authentication
 
 ## Authors
 - Angela Guardia |  [Github](https://github.com/AngelaGuardia)  |  [LinkedIn](https://www.linkedin.com/in/angela-guardia/)
