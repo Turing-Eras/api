@@ -55,7 +55,8 @@ With Eras, you'll see your life in a whole new way.
 ## GraphQL Schema
 - Queries available:
   - <details><summary>Get Single Era:</summary>
-    ```graphql {
+    ```
+    {
       getEra(id: #{id}) {
         id
         userId
@@ -70,7 +71,8 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Get Single Event: </summary>
-    ```graphql {
+    ```
+    {
       getEvent(id: "#{event_id}") {
         name
         date
@@ -79,7 +81,8 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Get Single User:</summary>
-    ```graphql {
+    ```
+    {
       getUser(id: #{id}) {
         id
         name
@@ -109,7 +112,8 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Get All Users:</summary>
-    ```graphql {
+    ```
+    {
       getUsers {
         id
         name
@@ -124,13 +128,15 @@ With Eras, you'll see your life in a whole new way.
     </details>
 - Mutations available:
   - <details><summary>Create User: </summary>
-    ```graphql mutation {
+    ```
+    mutation {
 
     }
     ```
     </details>
   - <details><summary>Update User:</summary>
-    ```graphql mutation {
+    ```
+    mutation {
       updateUser(input:{
           id: #{user_id}
           name: "NEW NAME"
@@ -149,16 +155,22 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Create Era:</summary>
-    ```graphql mutation
+    ```
+    mutation {
 
+    }
     ```
     </details>
-  - Update Era:
-    ```graphql mutation
-
+  - <details><summary>Update Era:</summary>
     ```
-  - Delete Era:
-    ```graphql mutation {
+    mutation {
+
+    }
+    ```
+    </details>
+  - <details><summary>Delete Era:</summary>
+    ```
+    mutation {
       deleteEra(input:{
           id: #{era_id}
           }){
@@ -166,12 +178,17 @@ With Eras, you'll see your life in a whole new way.
           }
         }
     ```
-  - Create Event:
-    ```graphql mutation
-
+    </details>
+  - <details><summary>Create Event:</summary>
     ```
-  - Update Event:
-    ```graphql mutation {
+    mutation {
+
+    }
+    ```
+    </details>
+  - <details><summary>Update Event:</summary>
+    ```
+    mutation {
       updateEvent(input:{
           id: #{event_id}
           name: "NEW NAME"
@@ -185,8 +202,10 @@ With Eras, you'll see your life in a whole new way.
           }
         }
     ```
-  - Delete Event:
-    ```graphql mutation {
+    </details>
+  - <details><summary>Delete Event:</summary>
+    ```
+    mutation {
       deleteEvent(input:{
           id: #{event_id}
           }){
@@ -194,6 +213,7 @@ With Eras, you'll see your life in a whole new way.
           }
         }
     ```
+    </details>
 - Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
