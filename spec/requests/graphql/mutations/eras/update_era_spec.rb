@@ -13,8 +13,8 @@ RSpec.describe Mutations::Eras::UpdateEra, type: :request do
 
       expect(data['name']).to eq('Master chambray tote bag fixie')
       expect(data['userId']).to eq(user.id.to_s)
-      expect(data['startDate']).to eq('2021-01-04 00:00:00 UTC')
-      expect(data['endDate']).to eq('2021-01-20 00:00:00 UTC')
+      expect(data['startDate']).to eq('2021-01-04')
+      expect(data['endDate']).to eq('2021-01-20')
       expect(data['color']).to eq('#7225f6')
     end
 
