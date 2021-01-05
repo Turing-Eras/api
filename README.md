@@ -55,8 +55,7 @@ With Eras, you'll see your life in a whole new way.
 ## GraphQL Schema
 - Queries available:
   - <details><summary>Get Single Era:</summary>
-    ```graphql
-    {
+    ```graphql {
       getEra(id: #{id}) {
         id
         userId
@@ -71,8 +70,7 @@ With Eras, you'll see your life in a whole new way.
     ```
     </details>
   - <details><summary>Get Single Event: </summary>
-    ```graphql
-     {
+    ```graphql {
       getEvent(id: "#{event_id}") {
         name
         date
@@ -80,9 +78,8 @@ With Eras, you'll see your life in a whole new way.
       }
     ```
     </details>
-  - Get Single User:
-    - ```graphql
-     {
+  - <details><summary>Get Single User:</summary>
+    ```graphql {
       getUser(id: #{id}) {
         id
         name
@@ -110,9 +107,9 @@ With Eras, you'll see your life in a whole new way.
       }
     }
     ```
-  - Get All Users:
-    - ```graphql
-     {
+    </details>
+  - <details><summary>Get All Users:</summary>
+    ```graphql {
       getUsers {
         id
         name
@@ -124,15 +121,16 @@ With Eras, you'll see your life in a whole new way.
       }
     }
     ```
-
+    </details>
 - Mutations available:
-  - Create User:
-    - ```graphql
+  - <details><summary>Create User: </summary>
+    ```graphql mutation {
 
+    }
     ```
-  - Update User:
-    - ```graphql
-     mutation {
+    </details>
+  - <details><summary>Update User:</summary>
+    ```graphql mutation {
       updateUser(input:{
           id: #{user_id}
           name: "NEW NAME"
@@ -149,17 +147,18 @@ With Eras, you'll see your life in a whole new way.
           }
         }
     ```
-  - Create Era:
-    - ```graphql
+    </details>
+  - <details><summary>Create Era:</summary>
+    ```graphql mutation
 
     ```
+    </details>
   - Update Era:
-    - ```graphql
+    ```graphql mutation
 
     ```
   - Delete Era:
-    - ```graphql
-     mutation {
+    ```graphql mutation {
       deleteEra(input:{
           id: #{era_id}
           }){
@@ -168,12 +167,11 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
   - Create Event:
-    - ```graphql
+    ```graphql mutation
 
     ```
   - Update Event:
-    - ```graphql
-     mutation {
+    ```graphql mutation {
       updateEvent(input:{
           id: #{event_id}
           name: "NEW NAME"
@@ -188,8 +186,7 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
   - Delete Event:
-    - ```graphql
-     mutation {
+    ```graphql mutation {
       deleteEvent(input:{
           id: #{event_id}
           }){
