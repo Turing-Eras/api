@@ -8,6 +8,6 @@ class Mutations::Eras::CreateEra < ::Mutations::BaseMutation
   type Types::EraType
 
   def resolve(attributes)
-    Era.create(attributes)
+    Era.create!(attributes)
   end
 end
