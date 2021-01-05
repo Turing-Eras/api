@@ -214,7 +214,7 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
     </details>
-- Is there way to nicely get the Documentation (shown when going to /graphiql?)
+- Is there way to nicely get the Documentation (shown when going to /graphiql?) 
 
 ## Database Schema
 - ![our schema](/schema.png)
