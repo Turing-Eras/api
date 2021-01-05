@@ -3,7 +3,7 @@
 
 This [GraphQL on Rails API](insert live endpoint link) serves queries and mutations to [Eras](insert live FE link), an application that allows you to visualize your life holistically in order to live more intentionally.
 
-By providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to cherish the little moments and appreciate the journey you've been on thus far.  Visualize how small Events kicked off larger Eras, find curious patterns, and marvel at just how far you've come, and how much time you still get.
+By providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to appreciate the little moments, cherish the time you have with loved ones, and live with more intention.
 
 With Eras, you'll see your life in a whole new way.
 
@@ -165,7 +165,7 @@ With Eras, you'll see your life in a whole new way.
       ```
   - Create Event:
     - ```
-    
+
     ```
   - Update Event:
     - ```
