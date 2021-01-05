@@ -16,6 +16,7 @@ RSpec.describe Types::QueryType do
                                               name: era.name,
                                               startDate: era.start_date.to_s,
                                               endDate: era.end_date.to_s,
+                                              weekNumber: era.week_number.to_s,
                                               color: era.color,
                                               createdAt: era.created_at.to_s,
                                               updatedAt: era.updated_at.to_s
@@ -32,6 +33,7 @@ RSpec.describe Types::QueryType do
           name
           startDate
           endDate
+          weekNumber
           color
           createdAt
           updatedAt
