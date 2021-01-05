@@ -8,12 +8,19 @@
 require 'factory_bot_rails'
 require 'faker'
 
+Event.destroy_all
+Event.reset_pk_sequence
+Era.destroy_all
+Era.reset_pk_sequence
+User.destroy_all
+User.reset_pk_sequence
+
 Event.delete_all
 Era.delete_all
 User.delete_all
 
-frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001,2,3))
-santa = User.create!(name: 'Nick', email: 'slay@northpole.com', birthdate: DateTime.new(1950,12,25))
+frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: Date.new(2001,2,3))
+santa = User.create!(name: 'Nick', email: 'slay@northpole.com', birthdate: Date.new(1950,12,25))
 
 FactoryBot.create_list(:era, 3, user: frosty)
 FactoryBot.create_list(:era, 3, user: santa)
