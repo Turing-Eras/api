@@ -177,8 +177,21 @@ With Eras, you'll see your life in a whole new way.
   - Update Era: <details>
     ```
     mutation {
-
-    }
+          updateEra(input:{
+              id: #{era_id}
+              name: "Master chambray tote bag fixie"
+              startDate: "Mon, 4 Jan 2021"
+              endDate: "Mon, 20 Jan 2021"
+              color: "#7225f6"
+              }) {
+                id
+                userId
+                name
+                startDate
+                endDate
+                color
+              }
+            }
     ```
     </details>
   - Delete Era: <details>
