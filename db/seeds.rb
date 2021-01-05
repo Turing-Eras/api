@@ -33,3 +33,5 @@ Question.create!(name: 'Moved to current house', question: 'What is your birthda
 Question.create!(name: 'Got married', question: "If you're currently married, when were you married?", onboarding: true)
 Question.create!(name: 'First job', question: 'What are the approximate dates that you started and ended your first job?', onboarding: true)
 Question.create!(name: 'Best vacation', question: 'What are the dates of your most memorable vacation?', onboarding: true)
+
+print 'Seeding Successful!'
