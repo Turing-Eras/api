@@ -9,10 +9,10 @@ RSpec.describe Mutations::Users::UpdateUser, type: :request do
       result = JSON.parse(response.body)
 
       data = result['data']['updateUser']
-
+      
       expect(data['name']).to eq('Frosted Flakes Frosty')
       expect(data['email']).to eq('ice@brr.com')
-      expect(data['birthdate']).to eq('2000-01-01 00:00:00 UTC')
+      expect(data['birthdate']).to eq('2000-01-01')
       expect(data['eras']).to eq(user.eras.map {|era| { 'id' => era.id.to_s }})
     end
 
