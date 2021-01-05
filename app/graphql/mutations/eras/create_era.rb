@@ -3,6 +3,7 @@ class Mutations::Eras::CreateEra < ::Mutations::BaseMutation
   argument :name, String, required: false
   argument :start_date, String, required: false
   argument :end_date, String, required: false
+  argument :week_number, String, required: false
   argument :color, String, required: false
 
   type Types::EraType
