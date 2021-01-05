@@ -5,8 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'factory_bot_rails'
+require 'faker'
 
+Event.delete_all
+Era.delete_all
 User.delete_all
 
-frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: Date.new(2001,2,3))
-santa = User.create!(name: 'Nick', email: 'slay@northpole.com', birthdate: Date.new(1950,12,25))
+frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: DateTime.new(2001,2,3))
+santa = User.create!(name: 'Nick', email: 'slay@northpole.com', birthdate: DateTime.new(1950,12,25))
+
+FactoryBot.create_list(:era, 3, user: frosty)
+FactoryBot.create_list(:era, 3, user: santa)
+
+FactoryBot.create_list(:event, 3, user: frosty)
+FactoryBot.create_list(:event, 3, user: santa)
