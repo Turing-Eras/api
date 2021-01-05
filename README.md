@@ -8,7 +8,7 @@ By providing info on personal events, you will be shown a visual calendar of you
 [insert screenshots]
 
 ## Readme Content
-- [User Interface](#user-interface) 
+- [User Interface](#user-interface)
 - [Local Setup](#local-setup)
 - [Test Suite](#test-suite)
 - [GraphQL Schema](#graphql-schema)
@@ -56,9 +56,9 @@ By providing info on personal events, you will be shown a visual calendar of you
 
 ## Database Schema
  - Insert pic of schema
- - Insert description of each table 
+ - Insert description of each table
 
- ## Project Board
+## Project Board
  - [GitHub project](https://github.com/orgs/Turing-Eras/projects/1)
  - Next steps / epics for development:
    - User authentication
@@ -68,4 +68,3 @@ By providing info on personal events, you will be shown a visual calendar of you
 - Daniel Halverson |  [Github](https:Gi.com/dhalverson)  |  [LinkedIn](https://www.linkedin.com/in/daniel-halverson/)
 - Leah Riffell |  [Github](https://github.com/leahriffell)  |  [LinkedIn](https://www.linkedin.com/in/leah-riffell/)
 - Luke Hunter James-Erickson  |  [Github](https://github.com/LHJE)  |  [LinkedIn](https://www.linkedin.com/in/luke-hunter-james-erickson-b65682143/)
-
