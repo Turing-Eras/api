@@ -7,5 +7,6 @@ module Types
 
     field :update_era, mutation: Mutations::Eras::UpdateEra
     field :delete_era, mutation: Mutations::Eras::DeleteEra
+    field :create_era, mutation: Mutations::Eras::CreateEra
   end
 end
