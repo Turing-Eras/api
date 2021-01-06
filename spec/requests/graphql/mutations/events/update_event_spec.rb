@@ -16,11 +16,11 @@ RSpec.describe Mutations::Events::UpdateEvent, type: :request do
       expect(data['color']).to eq('#26e840')
     end
 
-    def query(event_id)
+    def query(id)
       <<~GQL
         mutation {
           updateEvent(input:{
-              id: #{event_id}
+              id: #{id}
               name: "Paleo gluten-free aesthetic everyday farm-to-table slow-carb distillery."
               date: "Sat, 19 Dec 2020 15:38:49.000000000 UTC +00:00"
               color: "#26e840"
