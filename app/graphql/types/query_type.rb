@@ -15,6 +15,10 @@ module Types
       argument :id, ID, required: true
     end
 
+    # Questions
+    field :get_onboarding_questions, [Types::QuestionType], null: false,
+                                                            description: 'Returns a list of onboarding questions'
+
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
@@ -34,6 +38,11 @@ module Types
     # Event queries
     def get_event(id:)
       Event.find(id)
+    end
+
+    # Questions
+    def get_onboarding_questions
+      Question.where(onboarding: true)
     end
   end
 end
