@@ -4,7 +4,6 @@ module Mutations
       argument :user_id, ID, required: true
       argument :name, String, required: true
       argument :date, String, required: true
-      # argument :week_number, String, required: false
       argument :color, String, required: true
 
       type Types::EventType

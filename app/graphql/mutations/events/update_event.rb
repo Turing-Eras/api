@@ -1,6 +1,6 @@
 module Mutations
   module Events
-    class UpdateEvent < ::Mutations::BaseMutation
+    class UpdateEvent < Mutations::BaseMutation
       argument :id, ID, required: true
       argument :name, String, required: false
       argument :date, String, required: false
