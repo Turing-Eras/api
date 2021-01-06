@@ -34,5 +34,3 @@
 
 # Ignore the manifest.js
 /app/assets/config/manifest.js
-
-/config/application.rb
