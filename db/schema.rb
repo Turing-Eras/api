@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 2020_12_19_224408) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
-    t.integer "week_number"
+    t.integer "start_week"
+    t.integer "end_week"
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
