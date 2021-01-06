@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_01_05_214942) do
   create_table "eras", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_214942) do
   create_table "events", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
-    t.datetime "date"
+    t.date "date"
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_214942) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.datetime "birthdate"
+    t.date "birthdate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
