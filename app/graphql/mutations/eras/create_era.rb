@@ -13,6 +13,6 @@ class Mutations::Eras::CreateEra < ::Mutations::BaseMutation
     user_bday = User.where(id: attributes[:user_id])[0].birthdate
     attributes[:start_week] = ((start_date - user_bday).to_i / 7)
     attributes[:end_week] = ((end_date - user_bday).to_i / 7)
-    Era.create(attributes)
+    Era.create!(attributes)
   end
 end
