@@ -42,7 +42,7 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
 
       post graphql_path, params: { query: query(attributes) }
       result = JSON.parse(response.body)
-require "pry"; binding.pry
+      
       error = result["errors"].first
 
       expect(Era.all.size).to eq(@eras)
