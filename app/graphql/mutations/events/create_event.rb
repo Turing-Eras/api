@@ -13,7 +13,7 @@ module Mutations
         event_week = attributes[:date].to_date
         user_bday = User.where(id: attributes[:user_id])[0].birthdate
         attributes[:week_number] = ((event_week - user_bday).to_i / 7)
-        Event.create(attributes)
+        Event.create!(attributes)
       end
     end
   end

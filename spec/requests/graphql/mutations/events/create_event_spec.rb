@@ -28,58 +28,21 @@ RSpec.describe Mutations::Events::CreateEvent, type: :request do
       expect(data['color']).to eq(attributes[:color])
     end
 
-    xit "does not create an era with a start date in the future" do
+    it "does not create an event with a date in the future" do
       attributes = {
         userId: @user.id,
         name: 'Summer Abroad',
-        startDate: '3000-01-01',
-        endDate: '2000-01-10',
-        color: '#000000'
-      }
-
-      post graphql_path, params: { query: query(attributes) }
-      result = JSON.parse(response.body)
-      
-      error = result["errors"].first
-
-      expect(Era.all.size).to eq(@eras)
-      expect(error["message"]).to eq("Validation failed: Start date cannot be in the future")
-    end
-
-    xit "does not create an era with an end date in the future" do
-      attributes = {
-        userId: @user.id,
-        name: 'Summer Abroad',
-        startDate: '2000-01-01',
-        endDate: '3000-01-10',
+        date: '3000-01-01',
         color: '#000000'
       }
 
       post graphql_path, params: { query: query(attributes) }
       result = JSON.parse(response.body)
 
-      error = result["errors"].first
+      error = result['errors'].first
 
-      expect(Era.all.size).to eq(@eras)
-      expect(error["message"]).to eq("Validation failed: End date cannot be in the future")
-    end
-
-    xit "does not create an era with both start and end date in the future" do
-      attributes = {
-        userId: @user.id,
-        name: 'Summer Abroad',
-        startDate: '3000-01-01',
-        endDate: '3000-01-10',
-        color: '#000000'
-      }
-
-      post graphql_path, params: { query: query(attributes) }
-      result = JSON.parse(response.body)
-
-      error = result["errors"].first
-
-      expect(Era.all.size).to eq(@eras)
-      expect(error["message"]).to eq("Validation failed: Start date cannot be in the future, End date cannot be in the future")
+      expect(Event.all.size).to eq(@events)
+      expect(error['message']).to eq('Validation failed: Date cannot be in the future')
     end
 
     def query(attributes)
