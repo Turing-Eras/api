@@ -15,6 +15,8 @@ RSpec.describe Mutations::Eras::UpdateEra, type: :request do
       expect(data['userId']).to eq(user.id.to_s)
       expect(data['startDate']).to eq('2021-01-04')
       expect(data['endDate']).to eq('2021-01-20')
+      expect(data['startWeek']).to eq('1515')
+      expect(data['endWeek']).to eq('1517')
       expect(data['color']).to eq('#7225f6')
     end
 
@@ -33,6 +35,8 @@ RSpec.describe Mutations::Eras::UpdateEra, type: :request do
                 name
                 startDate
                 endDate
+                startWeek
+                endWeek
                 color
               }
             }
