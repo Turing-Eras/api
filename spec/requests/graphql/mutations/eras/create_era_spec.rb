@@ -26,6 +26,8 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       expect(data['name']).to eq(attributes[:name])
       expect(data['startDate']).to eq(attributes[:startDate])
       expect(data['endDate']).to eq(attributes[:endDate])
+      expect(data['startWeek']).to eq('419')
+      expect(data['endWeek']).to eq('420')
       expect(data['color']).to eq(attributes[:color])
     end
 
@@ -40,7 +42,7 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
 
       post graphql_path, params: { query: query(attributes) }
       result = JSON.parse(response.body)
-
+require "pry"; binding.pry
       error = result["errors"].first
 
       expect(Era.all.size).to eq(@eras)
