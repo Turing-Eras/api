@@ -8,4 +8,13 @@ class ApiSchema < GraphQL::Schema
 
   # Add built-in connections for pagination
   use GraphQL::Pagination::Connections
+
+  # Error handling
+  use GraphQL::Execution::Errors
+
+  # Validation errors
+  rescue_from(ActiveRecord::RecordInvalid) do |err, _obj, _args, _ctx, _field|
+    # Raise a graphql-friendly error with a custom message
+    raise GraphQL::ExecutionError, err.to_s
+  end
 end
