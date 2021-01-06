@@ -2,6 +2,7 @@ module Types
   class MutationType < Types::BaseObject
     field :update_user, mutation: Mutations::Users::UpdateUser
 
+    # field :create_event, mutation: Mutations::Events::CreateEvent
     field :update_event, mutation: Mutations::Events::UpdateEvent
     field :delete_event, mutation: Mutations::Events::DeleteEvent
 
