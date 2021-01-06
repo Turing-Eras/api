@@ -26,6 +26,8 @@ FactoryBot.create_list(:era, 3, user: santa)
 FactoryBot.create_list(:event, 3, user: frosty)
 FactoryBot.create_list(:event, 3, user: santa)
 
+Question.create!(name: 'Name', question: 'When is your name?', onboarding: true)
+Question.create!(name: 'Email', question: 'When is your email address?', onboarding: true)
 Question.create!(name: 'Birthdate', question: 'When is your birthday?', onboarding: true)
 Question.create!(name: 'Graduated from high school', question: 'When did you graduate high school?', onboarding: true)
 Question.create!(name: 'Graduated from college', question: 'When did you graduate college?', onboarding: true)
