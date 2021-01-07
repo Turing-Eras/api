@@ -1,6 +1,6 @@
 module Mutations
   module Events
-    class DeleteEvent < ::Mutations::BaseMutation
+    class DeleteEvent < Mutations::BaseMutation
       argument :id, ID, required: true
 
       type Types::EventType
