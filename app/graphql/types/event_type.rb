@@ -4,7 +4,7 @@ module Types
     field :user_id, ID, null: false
     field :name, String, null: true
     field :date, String, null: true
-    field :week_number, String, null: true
+    field :week_number, Integer, null: true
     field :color, String, null: true
     field :created_at, String, null: true
     field :updated_at, String, null: true

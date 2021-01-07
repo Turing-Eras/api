@@ -24,7 +24,7 @@ RSpec.describe Mutations::Events::CreateEvent, type: :request do
       expect(data['userId']).to eq("#{attributes[:userId]}")
       expect(data['name']).to eq(attributes[:name])
       expect(data['date']).to eq(attributes[:date])
-      expect(data['weekNumber']).to eq('1462')
+      expect(data['weekNumber']).to eq(1462)
       expect(data['color']).to eq(attributes[:color])
     end
 
