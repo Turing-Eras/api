@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Mutations::Eras::CreateEra, type: :request do
   describe '.resolve' do
     before :each do
-      @user = create(:user)
+      @user = create(:user, birthdate: '1991-12-19 15:34:36')
       @eras = Era.all.size
     end
 
@@ -26,8 +26,8 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       expect(data['name']).to eq(attributes[:name])
       expect(data['startDate']).to eq(attributes[:startDate])
       expect(data['endDate']).to eq(attributes[:endDate])
-      expect(data['startWeek']).to eq('419')
-      expect(data['endWeek']).to eq('420')
+      expect(data['startWeek']).to eq(419)
+      expect(data['endWeek']).to eq(420)
       expect(data['color']).to eq(attributes[:color])
     end
 

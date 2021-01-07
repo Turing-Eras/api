@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Mutations::Eras::UpdateEra, type: :request do
   describe '.resolve' do
     it 'updates an era' do
-      user = create(:user, :with_eras_events)
+      user = create(:user, :with_eras_events, birthdate: '1991-12-19 15:34:36')
       era_id = user.eras[0].id
 
       post graphql_path, params: { query: query(era_id) }
@@ -15,8 +15,8 @@ RSpec.describe Mutations::Eras::UpdateEra, type: :request do
       expect(data['userId']).to eq(user.id.to_s)
       expect(data['startDate']).to eq('2021-01-04')
       expect(data['endDate']).to eq('2021-01-20')
-      expect(data['startWeek']).to eq('1515')
-      expect(data['endWeek']).to eq('1517')
+      expect(data['startWeek']).to eq(1515)
+      expect(data['endWeek']).to eq(1517)
       expect(data['color']).to eq('#7225f6')
     end
 
