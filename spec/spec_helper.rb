@@ -1,5 +1,3 @@
-require 'factory_bot_rails'
-
 require 'simplecov'
 SimpleCov.start 'rails' do
   class BaseFilter < SimpleCov::Filter
