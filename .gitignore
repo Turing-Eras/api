@@ -31,6 +31,3 @@
 
 # Ignore application configuration
 /config/application.yml
-
-# Ignore the manifest.js
-/app/assets/config/manifest.js
