@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Mutations::Eras::CreateEra, type: :request do
   describe '.resolve' do
     before :each do
-      @user = create(:user, birthdate: '1991-12-19 15:34:36')
+      @user = create(:user, birthdate: '1991-12-19')
       @eras = Era.all.size
     end
 

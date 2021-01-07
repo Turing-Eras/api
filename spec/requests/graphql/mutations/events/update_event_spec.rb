@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Mutations::Events::UpdateEvent, type: :request do
   describe '.resolve' do
     it 'updates a user' do
-      user = create(:user, :with_eras_events, birthdate: '1991-12-19 15:34:36')
+      user = create(:user, :with_eras_events, birthdate: '1991-12-19')
       event_id = user.events[0].id
 
       post graphql_path, params: { query: query(event_id) }
