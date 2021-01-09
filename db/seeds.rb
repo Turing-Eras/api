@@ -26,11 +26,11 @@ FactoryBot.create_list(:era, 3, user: santa)
 FactoryBot.create_list(:event, 3, user: frosty)
 FactoryBot.create_list(:event, 3, user: santa)
 
-Question.create!(name: 'Graduated from high school', question: 'When did you graduate high school?', onboarding: true)
-Question.create!(name: 'Graduated from college', question: 'When did you graduate college?', onboarding: true)
-Question.create!(name: 'Moved to current house', question: 'What is your birthday?', onboarding: true)
-Question.create!(name: 'Got married', question: "If you're currently married, when were you married?", onboarding: true)
-Question.create!(name: 'First job', question: 'What are the approximate dates that you started and ended your first job?', onboarding: true)
-Question.create!(name: 'Best vacation', question: 'What are the dates of your most memorable vacation?', onboarding: true)
+Question.create!(name: 'Graduated from high school', question: 'When did you graduate high school?', onboarding: true, event_type: 'event')
+Question.create!(name: 'Graduated from college', question: 'When did you graduate college?', onboarding: true, event_type: 'event')
+Question.create!(name: 'Moved to current house', question: 'When did you move to your current home?', onboarding: true, event_type: 'event')
+Question.create!(name: 'Got married', question: "If you're currently married, when were you married?", onboarding: true, event_type: 'event')
+Question.create!(name: 'First job', question: 'What are the approximate dates that you started and ended your first job?', onboarding: true, event_type: 'era')
+Question.create!(name: 'Best vacation', question: 'What are the dates of your most memorable vacation?', onboarding: true, event_type: 'era')
 
 print 'Seeding Successful!'
