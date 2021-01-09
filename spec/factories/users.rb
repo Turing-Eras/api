@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :user do
     name { Faker::Name.name }
     email { Faker::Internet.unique.email }
-    birthdate { '1991-12-19 15:34:36' }
+    birthdate { Faker::Date.birthday(min_age: 18, max_age: 65)}
 
     trait :with_eras_events do
       after(:create) do |user|
