@@ -263,7 +263,12 @@ With Eras, you'll see your life in a whole new way.
 
 ## Database Schema
 - ![our schema](/schema.png)
-- Insert description of each table 
+- Description of tables:
+  - Users: at this point, user must sign up in order to generate a calendar
+  - Eras: a life event that occurs between a period of dates
+  - Event: a life event that occurs on one date 
+  - Questions: list of questions that user can answer to generate events and eras
+    - Questions will be a part of onboarding on default if `onboarding` equals true
 
 ## Project Board
 - [GitHub project](https://github.com/orgs/Turing-Eras/projects/1)
