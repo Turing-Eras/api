@@ -1,9 +1,9 @@
 # Eras
 ![rails-badge](https://img.shields.io/badge/Rails-6.1.0-informational?style=flat-square) ![ruby-badge](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat-square) ![build-badge](https://img.shields.io/travis/turing-eras/api/main?style=flat-square) ![closed-pr-badge](https://img.shields.io/github/issues-pr-closed-raw/turing-eras/api?style=flat-square)
 
-This [GraphQL on Rails API](insert live endpoint link) serves queries and mutations to [Eras](insert live FE link), an application that allows you to visualize your life holistically in order to live more intentionally.
+This [GraphQL on Rails API](https://eras-api.herokuapp.com/) serves queries and mutations to [Eras](insert live FE link), an application that allows you to holistically visualize your life in order to live more intentionally.
 
-By providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to appreciate the little moments, cherish the time you have with loved ones, and live with more intention.
+After providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to appreciate the little moments, cherish the time you have with loved ones, and live with more intention.
 
 With Eras, you'll see your life in a whole new way.
 
@@ -19,7 +19,7 @@ With Eras, you'll see your life in a whole new way.
 - [Contributors](#contributors)
 
 ## User Interface
-- [Deployed application](insert link)
+- [Deployed application](https://eras-api.herokuapp.com/)
 - [Frontend repo](https://github.com/Turing-Eras/front_end)
   - Stack: React, Typescript
 
@@ -35,22 +35,14 @@ With Eras, you'll see your life in a whole new way.
     - `rails db:create`
     - `rails db:migrate`
     - `rails db:seed`
-- Create a manifest.js file nested under app/assets/config and place the following inside:
-  ```
-  //= link graphiql/rails/application.css
-  //= link graphiql/rails/application.js
-  ```
-  - This file is ignored by git tracking but is necessary to run the server locally.
 - Run your own development server:
-  - In config/application.rb, uncomment out line 15 (`require "sprockets/railtie"`)
   - `rails s`
-  - You should be able to access the GraphQL interface and see available queries and mutations via the docs on http://localhost:3000/graphiql
+  - You should be able to access the GraphQL interface and see available queries and mutations via the docs on [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
 
 ## Test Suite
 - Run with `bundle exec rspec`
 - All tests should be passing
 - 100.0% test coverage
-
 
 ## GraphQL Schema
 - Queries available:
