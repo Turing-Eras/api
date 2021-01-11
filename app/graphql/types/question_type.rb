@@ -6,5 +6,6 @@ module Types
     field :onboarding, Boolean, null: false
     field :created_at, String, null: false
     field :updated_at, String, null: false
+    field :event_type, String, null: false
   end
 end
