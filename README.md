@@ -49,7 +49,7 @@ With Eras, you'll see your life in a whole new way.
 ## Test Suite
 - Run with `bundle exec rspec`
 - All tests should be passing
-- 83.24% test coverage
+- 100.0% test coverage
 
 
 ## GraphQL Schema
@@ -130,8 +130,23 @@ With Eras, you'll see your life in a whole new way.
   - Create User: <details>
     ```
     mutation {
-
-    }
+      createUser(input:{
+          name: "#{name}"
+          email: "#{email}"
+          birthdate: "#{birthdate}"
+          }){
+            id
+            name
+            email
+            birthdate
+            events {
+              id
+            }
+            eras {
+              id
+            }
+          }
+        }
     ```
     </details>
   - Update User: <details>
@@ -208,8 +223,20 @@ With Eras, you'll see your life in a whole new way.
   - Create Event: <details>
     ```
     mutation {
-
-    }
+      createEvent(input:{
+          userId: "#{userId}"
+          name: "#{name}"
+          date: "#{date}"
+          color: "#{color}"
+          }) {
+            id
+            userId
+            name
+            date
+            weekNumber
+            color
+          }
+        }
     ```
     </details>
   - Update Event: <details>
