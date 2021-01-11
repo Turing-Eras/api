@@ -5,9 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'factory_bot_rails'
-require 'faker'
-
 Event.destroy_all
 Event.reset_pk_sequence
 Era.destroy_all
@@ -20,11 +17,21 @@ Question.reset_pk_sequence
 frosty = User.create!(name: 'Frosty', email: 'snow@brr.com', birthdate: Date.new(2001,2,3))
 santa = User.create!(name: 'Nick', email: 'slay@northpole.com', birthdate: Date.new(1950,12,25))
 
-FactoryBot.create_list(:era, 3, user: frosty)
-FactoryBot.create_list(:era, 3, user: santa)
+Era.create(name: 'childhood', start_date: Date.new(2001,2,3), end_date: Date.new(2011,2,3), start_week: Random.rand(0..300), end_week: Random.rand(301..500), color: Faker::Color.hex_color, user: frosty)
+Era.create(name: 'teens', start_date: Date.new(2012,2,3), end_date: Date.new(2020,2,3), start_week: Random.rand(0..300), end_week: Random.rand(301..500), color: Faker::Color.hex_color, user: frosty)
+Era.create(name: 'apocalypse', start_date: Date.new(2020,3,3), end_date: Date.new(2021,1,1), start_week: Random.rand(0..300), end_week: Random.rand(301..500), color: Faker::Color.hex_color, user: frosty)
 
-FactoryBot.create_list(:event, 3, user: frosty)
-FactoryBot.create_list(:event, 3, user: santa)
+Era.create(name: 'childhood', start_date: Date.new(1951,2,3), end_date: Date.new(1961,2,3), start_week: Random.rand(0..300), end_week: Random.rand(301..500), color: Faker::Color.hex_color, user: santa)
+Era.create(name: 'teens', start_date: Date.new(1962,2,3), end_date: Date.new(1972,2,3), start_week: Random.rand(0..300), end_week: Random.rand(301..500), color: Faker::Color.hex_color, user: santa)
+Era.create(name: 'apocalypse', start_date: Date.new(1973,3,3), end_date: Date.new(2021,1,1), start_week: Random.rand(0..300), end_week: Random.rand(301..500), color: Faker::Color.hex_color, user: santa)
+
+Event.create(name: 'apocalypse', date: Date.new(2002,4,3), week_number: Random.rand(0..300), color: Faker::Color.hex_color, user: frosty)
+Event.create(name: 'apocalypse', date: Date.new(2010,4,3), week_number: Random.rand(0..300), color: Faker::Color.hex_color, user: frosty)
+Event.create(name: 'apocalypse', date: Date.new(2020,4,3), week_number: Random.rand(0..300), color: Faker::Color.hex_color, user: frosty)
+
+Event.create(name: 'apocalypse', date: Date.new(1973,4,3), week_number: Random.rand(0..300), color: Faker::Color.hex_color, user: santa)
+Event.create(name: 'apocalypse', date: Date.new(1983,4,3), week_number: Random.rand(0..300), color: Faker::Color.hex_color, user: santa)
+Event.create(name: 'apocalypse', date: Date.new(1993,4,3), week_number: Random.rand(0..300), color: Faker::Color.hex_color, user: santa)
 
 Question.create!(name: 'Graduated from high school', question: 'When did you graduate high school?', onboarding: true, event_type: 'event')
 Question.create!(name: 'Graduated from college', question: 'When did you graduate college?', onboarding: true, event_type: 'event')
