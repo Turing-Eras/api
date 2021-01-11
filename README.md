@@ -277,6 +277,10 @@ With Eras, you'll see your life in a whole new way.
 - [GitHub project](https://github.com/orgs/Turing-Eras/projects/1)
 - Next steps / epics for development:
   - User authentication
+  - Extended onboarding
+  - Ability to share calendar
+  - Media attachments (videos, photos)
+  - Visual representation of questions answered vs. questions left
 
 ## Authors
 - Angela Guardia |  [Github](https://github.com/AngelaGuardia)  |  [LinkedIn](https://www.linkedin.com/in/angela-guardia/)
