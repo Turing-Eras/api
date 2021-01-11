@@ -264,7 +264,7 @@ With Eras, you'll see your life in a whole new way.
 ## Database Schema
 - ![our schema](/schema.png)
 - Description of tables:
-  - Users: at this point, user must sign up in order to generate a calendar
+  - Users: all user accounts (at this point, user must sign up in order to generate a calendar)
   - Eras: a life event that occurs between a period of dates
   - Event: a life event that occurs on one date 
   - Questions: list of questions that user can answer to generate events and eras
