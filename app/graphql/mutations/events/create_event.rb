@@ -14,6 +14,7 @@ class Mutations::Events::CreateEvent < Mutations::BaseMutation
     event_date = attributes[:date].to_date
     user_bday = User.where(id: attributes[:user_id])[0].birthdate
     attributes[:week_number] = Mutations::DateCalculator.week_number(event_date, user_bday)
+    attributes[:color] = 
     Event.create!(attributes)
   end
 end
