@@ -5,7 +5,7 @@ class Mutations::Eras::CreateEra < ::Mutations::BaseMutation
   argument :name, String, required: true
   argument :start_date, String, required: true
   argument :end_date, String, required: true
-  argument :color, String, required: true
+  argument :color, String, required: false
 
   type Types::EraType
 
