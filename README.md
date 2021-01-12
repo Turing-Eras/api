@@ -1,9 +1,11 @@
-# Eras
+<img src="eras-logo-horizontal.png" width="300"><br>
+
 ![rails-badge](https://img.shields.io/badge/Rails-6.1.0-informational?style=flat-square) ![ruby-badge](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat-square) ![build-badge](https://img.shields.io/travis/turing-eras/api/main?style=flat-square) ![closed-pr-badge](https://img.shields.io/github/issues-pr-closed-raw/turing-eras/api?style=flat-square)
 
-This [GraphQL on Rails API](insert live endpoint link) serves queries and mutations to [Eras](insert live FE link), an application that allows you to visualize your life holistically in order to live more intentionally.
 
-By providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to appreciate the little moments, cherish the time you have with loved ones, and live with more intention.
+This [GraphQL on Rails API](https://eras-api.herokuapp.com/) serves queries and mutations to [Eras](insert live FE link), an application that allows you to holistically visualize your life in order to live more intentionally.
+
+After providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to appreciate the little moments, cherish the time you have with loved ones, and live with more intention.
 
 With Eras, you'll see your life in a whole new way.
 
@@ -19,7 +21,7 @@ With Eras, you'll see your life in a whole new way.
 - [Contributors](#contributors)
 
 ## User Interface
-- [Deployed application](insert link)
+- [Deployed application](https://eras-api.herokuapp.com/)
 - [Frontend repo](https://github.com/Turing-Eras/front_end)
   - Stack: React, Typescript
 
@@ -35,22 +37,14 @@ With Eras, you'll see your life in a whole new way.
     - `rails db:create`
     - `rails db:migrate`
     - `rails db:seed`
-- Create a manifest.js file nested under app/assets/config and place the following inside:
-  ```
-  //= link graphiql/rails/application.css
-  //= link graphiql/rails/application.js
-  ```
-  - This file is ignored by git tracking but is necessary to run the server locally.
 - Run your own development server:
-  - In config/application.rb, uncomment out line 15 (`require "sprockets/railtie"`)
   - `rails s`
-  - You should be able to access the GraphQL interface and see available queries and mutations via the docs on http://localhost:3000/graphiql
+  - You should be able to access the GraphQL interface and see available queries and mutations via the docs on [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
 
 ## Test Suite
 - Run with `bundle exec rspec`
 - All tests should be passing
-- 83.24% test coverage
-
+- 100.0% test coverage
 
 ## GraphQL Schema
 - Queries available:
@@ -130,8 +124,23 @@ With Eras, you'll see your life in a whole new way.
   - Create User: <details>
     ```
     mutation {
-
-    }
+      createUser(input:{
+          name: "#{name}"
+          email: "#{email}"
+          birthdate: "#{birthdate}"
+          }){
+            id
+            name
+            email
+            birthdate
+            events {
+              id
+            }
+            eras {
+              id
+            }
+          }
+        }
     ```
     </details>
   - Update User: <details>
@@ -208,8 +217,20 @@ With Eras, you'll see your life in a whole new way.
   - Create Event: <details>
     ```
     mutation {
-
-    }
+      createEvent(input:{
+          userId: "#{userId}"
+          name: "#{name}"
+          date: "#{date}"
+          color: "#{color}"
+          }) {
+            id
+            userId
+            name
+            date
+            weekNumber
+            color
+          }
+        }
     ```
     </details>
   - Update Event: <details>
@@ -240,16 +261,24 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
     </details>
-- Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
 - ![our schema](/schema.png)
-- Insert description of each table
+- Description of tables:
+  - Users: all user accounts (at this point, user must sign up in order to generate a calendar)
+  - Eras: a life event that occurs between a period of dates
+  - Event: a life event that occurs on one date 
+  - Questions: list of questions that user can answer to generate events and eras
+    - Questions will be a part of onboarding on default if `onboarding` equals true
 
 ## Project Board
 - [GitHub project](https://github.com/orgs/Turing-Eras/projects/1)
 - Next steps / epics for development:
   - User authentication
+  - Extended onboarding
+  - Ability to share calendar
+  - Media attachments (videos, photos)
+  - Visual representation of questions answered vs. questions left
 
 ## Authors
 - Angela Guardia |  [Github](https://github.com/AngelaGuardia)  |  [LinkedIn](https://www.linkedin.com/in/angela-guardia/)
