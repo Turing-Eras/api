@@ -1,5 +1,7 @@
-# Eras
+<img src="eras-logo-horizontal.png" width="300"><br>
+
 ![rails-badge](https://img.shields.io/badge/Rails-6.1.0-informational?style=flat-square) ![ruby-badge](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat-square) ![build-badge](https://img.shields.io/travis/turing-eras/api/main?style=flat-square) ![closed-pr-badge](https://img.shields.io/github/issues-pr-closed-raw/turing-eras/api?style=flat-square)
+
 
 This [GraphQL on Rails API](https://eras-api.herokuapp.com/) serves queries and mutations to [Eras](insert live FE link), an application that allows you to holistically visualize your life in order to live more intentionally.
 
@@ -259,7 +261,6 @@ With Eras, you'll see your life in a whole new way.
         }
     ```
     </details>
-- Is there way to nicely get the Documentation (shown when going to /graphiql?)
 
 ## Database Schema
 - ![our schema](/schema.png)
