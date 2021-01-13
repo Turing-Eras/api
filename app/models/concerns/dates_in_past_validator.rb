@@ -8,7 +8,7 @@ class DatesInPastValidator < ActiveModel::Validator
   end
 
   private
-  
+
   def era(record)
     record.errors.add(:start_date, 'cannot be in the future') if record.start_date > Time.zone.today
     record.errors.add(:end_date, 'cannot be in the future') if record.end_date > Time.zone.today
