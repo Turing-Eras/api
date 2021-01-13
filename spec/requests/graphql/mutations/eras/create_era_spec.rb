@@ -85,6 +85,23 @@ RSpec.describe Mutations::Eras::CreateEra, type: :request do
       expect(error["message"]).to eq("Validation failed: Start date cannot be in the future, End date cannot be in the future")
     end
 
+    it "creates an era with a default color" do
+      attributes = {
+        userId: @user.id,
+        name: 'Summer Abroad',
+        startDate: '2000-01-01',
+        endDate: '2000-01-10'
+      }
+
+      post graphql_path, params: { query: query(attributes) }
+      result = JSON.parse(response.body)
+
+      data = result['data']['createEra']
+
+      expect(data['color']).to be_a(String)
+      expect(['#F7A83E', '#A94460', '#DB4709', '#96B40D', '#E7C408', '#70D6FF', '#FF70A6', '#AA9770', '#FFD670', '#E9FF70']).to include(data['color'])
+    end
+
     def query(attributes)
       <<~GQL
         mutation {

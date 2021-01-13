@@ -1,4 +1,4 @@
-require_relative '../date_calculator'
+require_relative '../helper_methods'
 
 class Mutations::Eras::UpdateEra < ::Mutations::BaseMutation
   argument :id, ID, required: true
@@ -11,15 +11,15 @@ class Mutations::Eras::UpdateEra < ::Mutations::BaseMutation
 
   type Types::EraType
 
-  extend Mutations::DateCalculator
+  extend Mutations::HelperMethods
 
   def resolve(attributes)
     era = Era.find(attributes[:id])
     start_date = attributes[:start_date].to_date
     end_date = attributes[:end_date].to_date
     user_bday = User.where(id: era[:user_id])[0].birthdate
-    attributes[:start_week] = Mutations::DateCalculator.week_number(start_date, user_bday)
-    attributes[:end_week] = Mutations::DateCalculator.week_number(end_date, user_bday)
+    attributes[:start_week] = Mutations::HelperMethods.week_number(start_date, user_bday)
+    attributes[:end_week] = Mutations::HelperMethods.week_number(end_date, user_bday)
     era.update(attributes)
     era
   end
