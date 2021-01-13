@@ -21,7 +21,7 @@ With Eras, you'll see your life in a whole new way.
 - [Contributors](#contributors)
 
 ## User Interface
-- [Deployed application](https://eras-api.herokuapp.com/)
+- [Deployed frontend application](https://eras-frontend.herokuapp.com/)
 - [Frontend repo](https://github.com/Turing-Eras/front_end)
   - Stack: React, Typescript
 
