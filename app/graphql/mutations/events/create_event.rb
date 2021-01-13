@@ -14,7 +14,7 @@ class Mutations::Events::CreateEvent < Mutations::BaseMutation
     event_date = attributes[:date].to_date
     user_bday = User.where(id: attributes[:user_id])[0].birthdate
     attributes[:week_number] = Mutations::HelperMethods.week_number(event_date, user_bday)
-    attributes[:color] = Mutations::HelperMethods.set_color if attributes[:color].empty?
+    attributes[:color] = Mutations::HelperMethods.set_color if attributes[:color].blank?
     Event.create!(attributes)
   end
 end

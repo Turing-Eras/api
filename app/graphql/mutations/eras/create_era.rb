@@ -17,7 +17,7 @@ class Mutations::Eras::CreateEra < ::Mutations::BaseMutation
     user_bday = User.where(id: attributes[:user_id])[0].birthdate
     attributes[:start_week] = Mutations::HelperMethods.week_number(start_date, user_bday)
     attributes[:end_week] = Mutations::HelperMethods.week_number(end_date, user_bday)
-    attributes[:color] = Mutations::HelperMethods.set_color if attributes[:color].empty?
+    attributes[:color] = Mutations::HelperMethods.set_color if attributes[:color].blank?
     Era.create!(attributes)
   end
 end
