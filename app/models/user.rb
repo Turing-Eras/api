@@ -5,4 +5,6 @@ class User < ApplicationRecord
 
   has_many :eras, dependent: :destroy
   has_many :events, dependent: :destroy
+
+  attr_accessor :current_week
 end
