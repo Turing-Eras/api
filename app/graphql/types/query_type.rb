@@ -1,5 +1,7 @@
 module Types
   class QueryType < Types::BaseObject
+    extend Mutations::HelperMethods
+
     field :get_users, [Types::UserType], null: false, description: 'Returns a list of users'
 
     field :get_user, Types::UserType, null: false, description: 'Returns a single user by id' do
@@ -27,7 +29,9 @@ module Types
     end
 
     def get_user(id:)
-      User.find(id)
+      user = User.find(id)
+      user.current_week = Mutations::HelperMethods.week_number(Date.today, user.birthdate)
+      user
     end
 
     # Eras
