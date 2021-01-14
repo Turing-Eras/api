@@ -3,13 +3,11 @@
 ![rails-badge](https://img.shields.io/badge/Rails-6.1.0-informational?style=flat-square) ![ruby-badge](https://img.shields.io/badge/Ruby-2.5.3-informational?style=flat-square) ![build-badge](https://img.shields.io/travis/turing-eras/api/main?style=flat-square) ![closed-pr-badge](https://img.shields.io/github/issues-pr-closed-raw/turing-eras/api?style=flat-square)
 
 
-This [GraphQL on Rails API](https://eras-api.herokuapp.com/) serves queries and mutations to [Eras](insert live FE link), an application that allows you to holistically visualize your life in order to live more intentionally.
+This [GraphQL on Rails API](https://eras-api.herokuapp.com/) serves queries and mutations to [Eras](https://eras-frontend.herokuapp.com/), an application that allows you to holistically visualize your life in order to live more intentionally.
 
 After providing info on personal events, you will be shown a visual calendar of your life. By viewing the seemingly fleeting weeks that add up to years and decades, you are able to appreciate the little moments, cherish the time you have with loved ones, and live with more intention.
 
 With Eras, you'll see your life in a whole new way.
-
-[insert screenshots]
 
 ## Readme Content
 - [User Interface](#user-interface)
@@ -21,7 +19,7 @@ With Eras, you'll see your life in a whole new way.
 - [Contributors](#contributors)
 
 ## User Interface
-- [Deployed application](https://eras-api.herokuapp.com/)
+- [Deployed frontend application](https://eras-frontend.herokuapp.com/)
 - [Frontend repo](https://github.com/Turing-Eras/front_end)
   - Stack: React, Typescript
 
