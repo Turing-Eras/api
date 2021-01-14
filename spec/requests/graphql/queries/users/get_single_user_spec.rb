@@ -1,9 +1,13 @@
 require 'rails_helper'
+extend Mutations::HelperMethods
 
 RSpec.describe Types::QueryType do
   describe 'display users' do
     it 'can query one user' do
-      user = create(:user, :with_eras_events)
+      user = create(:user, :with_eras_events, birthdate: "01-01-1980")
+
+      allow(Date).to receive(:today).and_return Date.new(2021,1,14)
+      week = Mutations::HelperMethods.week_number(Date.new(2021,1,14), user.birthdate)
 
       post graphql_path, params: { query: query(user.id) }
       result = JSON.parse(response.body)
@@ -13,7 +17,8 @@ RSpec.describe Types::QueryType do
                                                  'id' => user.id.to_s,
                                                  'name' => user.name,
                                                  'email' => user.email,
-                                                 'birthdate' => user.birthdate.to_s
+                                                 'birthdate' => user.birthdate.to_s,
+                                                 'currentWeek' => week
                                                })
 
       expect(result['data']['getUser']['eras']).to eq(
@@ -43,7 +48,41 @@ RSpec.describe Types::QueryType do
             'updatedAt' => event.updated_at.to_s
           }
         end
-      )      
+      )
+    end
+
+    it "Returns the current week" do
+      user = create(:user, :with_eras_events, birthdate: "01-01-2021")
+
+      allow(Date).to receive(:today).and_return Date.new(2021,1,8)
+      week = 1
+
+      post graphql_path, params: { query: query(user.id) }
+      result = JSON.parse(response.body)
+
+      expect(result.dig('data',
+                        'getUser')).to include({
+                                                 'id' => user.id.to_s,
+                                                 'name' => user.name,
+                                                 'email' => user.email,
+                                                 'birthdate' => user.birthdate.to_s,
+                                                 'currentWeek' => week
+                                               })
+
+      allow(Date).to receive(:today).and_return Date.new(2021,1,15)
+      week = 2
+
+      post graphql_path, params: { query: query(user.id) }
+      result = JSON.parse(response.body)
+
+      expect(result.dig('data',
+                        'getUser')).to include({
+                                                 'id' => user.id.to_s,
+                                                 'name' => user.name,
+                                                 'email' => user.email,
+                                                 'birthdate' => user.birthdate.to_s,
+                                                 'currentWeek' => week
+                                               })
     end
   end
 
@@ -55,6 +94,7 @@ RSpec.describe Types::QueryType do
           name
           email
           birthdate
+          currentWeek
           eras {
             id
             userId
