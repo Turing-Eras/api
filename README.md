@@ -9,6 +9,8 @@ After providing info on personal events, you will be shown a visual calendar of 
 
 With Eras, you'll see your life in a whole new way.
 
+[Click here](https://www.youtube.com/watch?v=znibMKN77kQ&feature=youtu.be) to see a short presentation of our approach to the app's MVP. 
+
 ## Readme Content
 - [User Interface](#user-interface)
 - [Local Setup](#local-setup)
